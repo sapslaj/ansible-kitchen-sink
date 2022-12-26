@@ -1,0 +1,4 @@
+cloudflare_ddns_update_email: example@example.com
+cloudflare_ddns_update_api_key: ''
+cloudflare_ddns_update_zone: example.com
+cloudflare_ddns_update_on_calendar: daily

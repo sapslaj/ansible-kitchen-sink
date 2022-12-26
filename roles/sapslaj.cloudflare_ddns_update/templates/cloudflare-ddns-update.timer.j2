@@ -1,0 +1,10 @@
+[Unit]
+Description=Cloudflare DDNS Updater
+Wants=network-online.target
+
+[Timer]
+OnCalendar={{ cloudflare_ddns_update_on_calendar }}
+Persistent=true
+
+[Install]
+WantedBy=timers.target

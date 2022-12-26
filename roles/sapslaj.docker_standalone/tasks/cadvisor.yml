@@ -1,0 +1,20 @@
+- name: cAdvisor - create cadvisor container
+  docker_container:
+    name: cadvisor
+    image: '{{ cadvisor_image }}'
+    restart_policy: unless-stopped
+    privileged: yes
+    network_mode: host
+    pid_mode: host
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    devices:
+      - /dev/kmsg
+    command:
+      - --port=9338
+      - --enable_load_reader=true
+    healthcheck:
+      test: [NONE]

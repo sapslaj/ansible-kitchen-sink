@@ -1,0 +1,4 @@
+rclone_sync_jobs: []
+  # - name: archive
+  #   src: /mnt/archive
+  #   dest: 'archive:'

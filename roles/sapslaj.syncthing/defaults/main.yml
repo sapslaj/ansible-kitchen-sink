@@ -1,0 +1,2 @@
+syncthing_config_dir: /var/docker/volumes/syncthing-config
+syncthing_data_dir: /srv
