@@ -7,7 +7,7 @@
     - '{{ network_syslog_promtail_volumes_dir }}/promtail-config'
 - name: syslog-ng config
   template:
-    src: syslog-ng.conf
+    src: syslog-ng.conf.j2
     dest: '{{ network_syslog_promtail_volumes_dir }}/syslog-ng-config/syslog-ng.conf'
   register: syslog_ng_config
 - name: syslog-ng container
@@ -28,7 +28,7 @@
       - '{{ network_syslog_promtail_volumes_dir }}/syslog-ng-config:/config'
 - name: promtail config
   template:
-    src: promtail.yaml
+    src: promtail.yaml.j2
     dest: '{{ network_syslog_promtail_volumes_dir }}/promtail-config/promtail.yaml'
   register: promtail_config
 - name: promtail container
